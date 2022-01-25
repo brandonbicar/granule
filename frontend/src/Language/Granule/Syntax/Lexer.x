@@ -44,6 +44,7 @@ tokens :-
   ∀                             { \p s -> TokenForall p }
   let                           { \p s -> TokenLet p }
   data                          { \p s -> TokenData p }
+  type				{ \p s -> TokenTypeAlias p }
   where                         { \p s -> TokenWhere p }
   module                        { \p s -> TokenModule p }
   hiding                        { \p s -> TokenHiding p }
@@ -124,7 +125,7 @@ data Token
   | TokenThen   AlexPosn
   | TokenElse   AlexPosn
   | TokenData   AlexPosn
-  | TokenTypeDecl AlexPosn
+  | TokenTypeAlias AlexPosn
   | TokenWhere  AlexPosn
   | TokenModule AlexPosn
   | TokenHiding AlexPosn
