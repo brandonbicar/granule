@@ -45,6 +45,7 @@ import Language.Granule.Utils hiding (mkSpan)
 %token
     nl    { TokenNL _ }
     data  { TokenData _ }
+    type { TokenTypeAlias _ }
     where { TokenWhere _ }
     module { TokenModule _ }
     hiding { TokenHiding _ }
