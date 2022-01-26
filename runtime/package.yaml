@@ -21,6 +21,7 @@ dependencies:
 - criterion
 - time
 - silently
+- gloss
 
 default-extensions:
 - LambdaCase

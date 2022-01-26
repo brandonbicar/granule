@@ -15,6 +15,7 @@ extra-deps:
 - sbv-8.5
 - syz-0.2.0.0@sha256:7307acb8f6ae7720e7e235c974281ecee912703c1394ebcac19caf83d70bb492,2345
 - clock-0.8
+#- gloss-1.13.2.1
 # Dependencies for language server
 - lsp-1.2.0.1@sha256:e229e53ea402947bca2e31bd33040e472509da7e1630f1ec40f52943c7227ea4,5607
 - dependent-map-0.4.0.0@sha256:ca2b131046f4340a1c35d138c5a003fe4a5be96b14efc26291ed35fd08c62221,1657

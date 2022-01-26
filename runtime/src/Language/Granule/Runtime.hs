@@ -22,6 +22,7 @@ module Language.Granule.Runtime
   , putStr, read, (<$>) , fromIntegral, Monad(..)
   , ($), error, (>), (++), id, Num(..), (.)
   , pack, Text
+  , Display(..)
   ) where
 
 import Foreign.Marshal.Array ( callocArray )
@@ -42,6 +43,7 @@ import Data.Function (const)
 import Data.Text
 import Data.Text.IO
 import Data.Time.Clock
+import qualified Graphics.Gloss as GL
 
 -- ^ Eventually this can be expanded with other kinds of runtime-managed data
 type RuntimeData = FloatArray
@@ -276,3 +278,8 @@ cap :: Capability cap -> () -> CapabilityType cap
 cap Console ()  = \x -> unsafePerformIO $ toStdout $ x
 cap TimeDate () = \() -> unsafePerformIO $ timeDate ()
 
+--------------------------------------------------------------------------------
+-- Gloss
+--------------------------------------------------------------------------------
+
+data Display = Display GL.Display
