@@ -22,7 +22,7 @@ module Language.Granule.Runtime
   , putStr, read, (<$>) , fromIntegral, Monad(..)
   , ($), error, (>), (++), id, Num(..), (.)
   , pack, Text
-  , Display(..)
+  , display
   ) where
 
 import Foreign.Marshal.Array ( callocArray )
@@ -282,4 +282,5 @@ cap TimeDate () = \() -> unsafePerformIO $ timeDate ()
 -- Gloss
 --------------------------------------------------------------------------------
 
-data Display = Display GL.Display
+display :: GL.Display -> GL.Color -> GL.Picture -> IO()
+display = GL.display
