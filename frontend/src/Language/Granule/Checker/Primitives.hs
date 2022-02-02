@@ -625,6 +625,18 @@ projL = BUILTIN
 projR : forall {a b : Type} . a & b -> b
 projR = BUILTIN
 
+--------------------------------------------------------------------------------
+-- Gloss
+--------------------------------------------------------------------------------
+
+data Picture = Text String | Translate Float Float Picture | Scale Float Float Picture
+data Color = RGBA Float Float Float Float
+data Display = InWindow String (Int, Int) (Int, Int) | FullScreen
+white : Color
+white = RGBA 1.0 1.0 1.0 1.0
+display : Display -> Color -> Picture -> ()
+display = BUILTIN
+
 |]
 
 
