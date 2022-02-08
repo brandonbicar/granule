@@ -26,7 +26,7 @@ typeAliases =
     [(mkId "IO", ([], TySet Normal (map tyCon ioElems)))
     ,(mkId "Inverse", ([mkId "a"], FunTy Nothing (TyVar $ mkId "a") (TyCon $ mkId "()")))]
   where
-    ioElems = ["Stdout", "Stdin", "Stderr", "Open", "Read", "Write", "IOExcept", "Close"]
+    ioElems = ["Stdout", "Stdin", "Stderr", "Open", "Read", "Write", "IOExcept", "Close", "Gloss"]
 
 capabilities :: [(Id, Type)]
 capabilities =
@@ -265,7 +265,7 @@ fromPure = BUILTIN
 -- I/O
 --------------------------------------------------------------------------------
 
-data IOElem = Stdout | Stdin | Stderr | Open | Read | Write | IOExcept | Close
+data IOElem = Stdout | Stdin | Stderr | Open | Read | Write | IOExcept | Close | Gloss
 
 fromStdin : String <{Stdin}>
 fromStdin = BUILTIN
@@ -634,7 +634,7 @@ data Color = RGBA Float Float Float Float
 data Display = InWindow String (Int, Int) (Int, Int) | FullScreen
 white : Color
 white = RGBA 1.0 1.0 1.0 1.0
-display : Display -> Color -> Picture -> ()
+display : Display -> Color -> Picture -> () <{Gloss}>
 display = BUILTIN
 
 |]
